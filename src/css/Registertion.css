@@ -49,24 +49,7 @@ body
     box-shadow: 1px 1px 5px 1px rgba(75, 74, 74, 0.404);
 
 }
-.logo{
-    display: flex;
 
-}
-.logo h1 
-{
-    font-size: 2.1rem;
-    color: rgb(0, 0, 0);
-    font-family: 'Lobster', cursive;
-    margin-left: 5px;
-}
-.logo img
-{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-top: 10px;
-}
 .contaner .left-contaner
 {
     width: 950px;
@@ -303,3 +286,22 @@ body
       border-radius: 5px;
      
   }
+  .logorg{
+   display: flex;
+   
+
+}
+.logorg h1 
+{
+   font-size: 2.1rem;
+   color: rgb(0, 0, 0);
+   font-family: 'Lobster', cursive;
+   margin-left: 5px;
+}
+.logorg img
+{
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   margin-top: 10px;
+}

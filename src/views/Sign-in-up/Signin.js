@@ -1,7 +1,9 @@
 import React from 'react';
+import logo from '../../img/logo.png';
 import '../../css/Login.css';
 import {Link} from "react-router-dom";
 function Signin() {
+    document.getElementById("title").innerHTML="Eflip | WELCOME BACK :)";
     const password=()=>{
         var x= document.getElementById("password");
         if(x.type=="password")
@@ -18,18 +20,19 @@ function Signin() {
         }
    
     return (
-       <div className="contaner">
+       <div className="contaner-signin">
 
         <div className="left-contaner">
-            <div className="logo">
-                <h1>LOGO</h1>
-            </div>
+            <Link to="/"><div className="logo">
+            <img src={logo} alt=""/>
+            <h1><span className="E">E</span>flip</h1>
+        </div></Link>
             <div className="left-info">
                 <h1>Hello friend!!</h1>
                 <p>Are you new to this website? Do you like what we 
                     offer ? you should totally join our website and experience
                     community.</p>
-                <Link to="/"><button className="btn">Register....</button></Link>
+                <Link to="/Sign-up"><button className="btn">Register....</button></Link>
             </div>
 
         </div>

@@ -1,13 +1,18 @@
-import {Routes, Route } from "react-router-dom";
+
 import Start from './views/Start';
 import React from 'react';
 import Signin from "./views/Sign-in-up/Signin";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Signup from './views/Sign-in-up/Signup';
 function App() {
   return (
-    <Routes>
-    <Route path="/" element={<Start/>} />
-    <Route path="/Sign-in" element={<Signin/>} />
-   </Routes>
+    <Router>
+    <Switch>
+  <Route exact path="/"><Start/></Route>
+  <Route exact path="/Sign-in"><Signin/></Route>
+  <Route exact path="/Sign-up"><Signup/></Route>
+  </Switch>
+  </Router>
     
   );
 }

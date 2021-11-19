@@ -3,6 +3,7 @@ import logo from '../img/logo.png';
 import '../css/index.css';
 import {Link} from "react-router-dom";
 function Start() {
+  document.getElementById("title").innerHTML="ONLINE SHOPPING Eflip";
   return (
     <div className="body">
       <div className="navigation">
