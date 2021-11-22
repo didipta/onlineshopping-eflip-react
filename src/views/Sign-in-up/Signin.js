@@ -41,7 +41,7 @@ function Signin() {
             <p>To keep connected with us please login with your personal 
                 information by user-name and password.</p>
 
-                <form action="sliderpage.html" className="sign-in-form" method="POST" >
+                <form action="" className="sign-in-form" method="POST" >
 
                 <div className="input-field">
                         <i className="fa fa-user-o" aria-hidden="true"></i>
@@ -58,7 +58,7 @@ function Signin() {
                 </div>
 
                 <a href="#" className="forget">Forgotten password?</a><br/>
-                    <input type="submit" value="Sign In" className="btn"/>
+                    <Link to="/home"><input type="submit" value="Sign In" className="btn"/></Link>
                     <p className="social-text">Or Sign in with social platforms</p>
 
                     <div className="social-media">
