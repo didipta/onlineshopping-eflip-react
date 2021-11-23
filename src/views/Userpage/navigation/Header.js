@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 function Header() {
    return(
   <>
@@ -9,8 +10,8 @@ function Header() {
             <p><i className="fa fa-envelope-o" aria-hidden="true"></i> diptacompani12@gmail.com</p>
         </div>
         <div className="logout-name">
-            <p><a href="#">@<span>Dipta saha</span></a></p>
-           <a href="#"> <p>Logout</p></a>
+            <p><a href="#">@<span>Diptasaha</span></a></p>
+           <Link to="/Sign-in"><p>Logout</p></Link>
             <p><i className="fa fa-bell-o" aria-hidden="true"></i><sup className="notification">12</sup>
             </p>
         </div>
