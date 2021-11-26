@@ -140,9 +140,9 @@ header.sticky
 .results
 {
     position:absolute;
-    left: 20.7%;
+    left: 20.3%;
     top: 11vh;
-    width:850px;
+    width:844px;
     background-color: rgb(40, 54, 78);
     border-radius: 1px;
     z-index: 2;

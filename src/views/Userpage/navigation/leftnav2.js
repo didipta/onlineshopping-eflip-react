@@ -1,21 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function Leftnav2() {
    return(
   <>
   
   <div className="CATAGORIES-nav c-nav-2">
-    <li><a href="/productlist/Laptops"> Laptops </a></li>
-    <li><a href="/productlist/Desktops"> Desktops </a></li>
-    <li><a href="/productlist/Watchs"> Watchs </a></li>
-    <li><a href="/productlist/Motor Bikes"> Motor Bikes </a></li>
-    <li><a href="/productlist/Smart phone"> Smart Phones</a></li>
-    <li><a href="/productlist/Smart & Android tvs"> Smart & Android Tvs</a></li>
-    <li><a href="/productlist/Speakers"> Speakers </a></li>
-    <li><a href="/productlist/Headphones"> Headphones </a></li>
-    <li><a href="/productlist/Refrigerators"> Refrigerators </a></li>
-    <li><a href="/productlist/Split Ac"> Split Ac </a></li>
-    <li><a href="/fashionproductlist/Men Fashion"> Men Fashion </a></li>
-    <li><a href="/fashionproductlist/Women Fashion"> Women Fashion</a></li>
+    <li><Link to="/productlist/Laptops"> Laptops </Link></li>
+    <li><Link to="/productlist/Desktops"> Desktops </Link></li>
+    <li><Link to="/productlist/Watchs"> Watchs </Link></li>
+    <li><Link to="/productlist/Motor Bikes"> Motor Bikes </Link></li>
+    <li><Link to="/productlist/Smart phone"> Smart Phones</Link></li>
+    <li><Link to="/productlist/Smart & Android tvs"> Smart & Android Tvs</Link></li>
+    <li><Link to="/productlist/Speakers"> Speakers </Link></li>
+    <li><Link to="/productlist/Headphones"> Headphones </Link></li>
+    <li><Link to="/productlist/Refrigerators"> Refrigerators </Link></li>
+    <li><Link to="/productlist/Split Ac"> Split Ac </Link></li>
+    <li><Link to="/productlist/Men Fashion"> Men Fashion </Link></li>
+    <li><Link to="/productlist/Women Fashion"> Women Fashion</Link></li>
 
 </div>
     

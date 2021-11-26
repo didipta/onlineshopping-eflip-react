@@ -101,7 +101,7 @@
   
    
 }
- .btn {
+#profile-info  .btn {
     width: 150px;
     background-color: #fa13ad;
     border: none;
@@ -120,7 +120,7 @@
   
   }
   
-.btn:hover {
+  #profile-info  .btn:hover {
     background-color: #4d84e2;
   }
   #Change-password

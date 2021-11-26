@@ -20,13 +20,6 @@ function threedimg(){
     document.getElementById("second-img").style.display = "none";
     document.getElementById("three-img").style.display = "none";
 }
-
-$(function(){
-
-  $('input[type="number"]').niceNumber();
-
-  });
-
   function bkashclick(){
              
     document.getElementById("bkashback").style.display = "block";
@@ -51,8 +44,7 @@ $(function(){
   {
     document.getElementById("orderconfirm").style.display = "block";
   }
-
-
+  
   let star = document.querySelectorAll('input');
   let showValue = document.querySelector('#rating-value');
   
@@ -63,3 +55,27 @@ $(function(){
       showValue.innerHTML = i + "/5";
     });
   }
+
+
+
+
+  $("#search-live").on('keyup',function(){
+    $value=$(this).val();
+    if($value!="")
+    {
+    $.ajax({
+         url:'http://127.0.0.1:8000/api/search',
+         type:"GET",
+         data:{'search':$value},
+         success:function(data)
+         {
+           $('#result-search').html(data);
+         }
+       });
+    }
+    else
+    {
+     $('#result-search').html('');
+    }
+    
+ });

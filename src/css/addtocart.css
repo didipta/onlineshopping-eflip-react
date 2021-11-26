@@ -38,6 +38,7 @@
     height: 100px;
     border: 1px solid rgb(163, 163, 163);
     cursor: pointer;
+    margin-left: 10px;
 }
 .addtocart .item-card
 {
