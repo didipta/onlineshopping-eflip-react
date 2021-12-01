@@ -1,4 +1,4 @@
-import React from "react";
+
 import '../../css/style.css';
 import Footer from "./navigation/Footer";
 import Header from "./navigation/Header";
@@ -12,7 +12,19 @@ import Fashioncollectionpro from "./Others/fashion-collectionpros";
 import NEWARRIVAL from "./Others/NEW-ARRIVAL";
 import Slider from "./Others/slider";
 import Tradingoffersale from "./Others/Trading-offer-sale";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 function Home() {
+   var useridinfo = null;
+if(localStorage.getItem('usernames')){
+  var userinfo = JSON.parse(localStorage.getItem('usernames'));
+  useridinfo=userinfo.allinfo.U_username;
+  console.log(userinfo);
+}
+
+axios.defaults.baseURL="http://127.0.0.1:8000/api/";
+axios.defaults.headers.common["Authorization"] = useridinfo;
+console.log(axios.defaults.headers.common["Authorization"]);
    document.getElementById("title").innerHTML="Eflip | Home";
    return(
   <>
@@ -22,6 +34,7 @@ function Home() {
    <Leftnav/>
    <div>
    <Slider/>
+   
    </div>
   </div>
   <Leftnav2/>

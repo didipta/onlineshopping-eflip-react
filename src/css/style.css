@@ -84,6 +84,7 @@ header.sticky
     font-size: 1rem;
     font-weight: 700;
     text-transform:lowercase;
+    cursor: pointer;
 }
 .logout-name p {
 

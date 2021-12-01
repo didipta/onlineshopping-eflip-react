@@ -11,13 +11,13 @@ const Productaxio = ()=>{
     var {categories} =useParams();
     let url="http://127.0.0.1:8000/api/productlist/"+categories;
     document.getElementById("title").innerHTML="Eflip | "+categories;
-    const [products, setPosts] = useState([]);
+    const [products, setproducts] = useState([]);
 
     useEffect(()=>{
         axios.get(url)
         .then(resp=>{
            console.log(resp.data);
-            setPosts(resp.data);
+            setproducts(resp.data);
         }).catch(err=>{
             console.log(err);
         });

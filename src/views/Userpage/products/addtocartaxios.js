@@ -8,7 +8,7 @@ import { Link, useParams } from "react-router-dom";
 import Header from "../navigation/Header";
 import Footer from "../navigation/Footer";
 import Addtocartinfo from "./addtocart";
-const Addtocartaxioxs = ()=>{
+const Addtocartaxioxs = (props)=>{
     var {productid} =useParams();
     let url="http://127.0.0.1:8000/api/addtocarttwo/"+productid;
     
@@ -26,7 +26,7 @@ const Addtocartaxioxs = ()=>{
     document.getElementById("title").innerHTML="Eflip | "+productinfo.P_name;
     return(
         <div>
-            <Header/>
+           <Header/>
             <a href="{{route('/Cartdetails')}}"><div class="cart-icon">
                 <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                 </div></a>

@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../../../img/logo.png';
+import {Link} from "react-router-dom";
 function Menunav() {
    return(
   <>
@@ -24,7 +25,7 @@ function Menunav() {
         <div className="profile">
         <a href="{{route('/Cartdetails')}}"><i className="fa fa-cart-plus" aria-hidden="true"></i></a>
             <i className="fa fa-comment-o" aria-hidden="true"></i>
-            <a href="{{route('/profile')}}">  <i className="fa fa-user-o" aria-hidden="true"></i></a>
+            <Link to="/Profile"><i className="fa fa-user-o" aria-hidden="true"></i></Link> 
         </div>
     </div>
 
@@ -41,7 +42,7 @@ function Menunav() {
             <ul>
                 <li><a href="">HOME</a></li>
                 <li><a href="{{route('/financial')}}">$FINANCIALS</a></li>
-                <li><a href="{{route('/Showalloders')}}">MY ORDERS</a></li>
+                <li><Link to="/myorder">MY ORDERS</Link></li>
                 <li><a href="">SHOP</a></li>
             </ul>
         </div>

@@ -60,25 +60,25 @@ function Signup() {
 
                     <div className="input-field">
                         <i className="fa fa-user"></i>
-                        <input type="text" name="Firstname" id="Firstname" value="{{old('Firstname')}}" placeholder="First name" />
+                        <input type="text" name="Firstname" id="Firstname"  placeholder="First name" />
                     </div>
                     <span className="error" style={{position:"absolute",top:"20%"}} ></span>
 
                     <div className="input-field">
                         <i className="fa fa-phone" aria-hidden="true"></i>
-                        <input type="tel" name="U_phone" id="phone" value="{{old('U_phone')}}" placeholder="Phone number" /><br/><span></span>
+                        <input type="tel" name="U_phone" id="phone"  placeholder="Phone number" /><br/><span></span>
                     </div>
                     <span className="error" style={{position:"absolute",top:"38%"}} ></span>
 
                     <div className="input-field">
                         <i className="fa fa-user-o" aria-hidden="true"></i>
-                        <input type="text" name="U_username" id="username" value="{{old('U_username')}}"  placeholder="User name" />
+                        <input type="text" name="U_username" id="username"   placeholder="User name" />
                     </div>
                     <span className="error" style={{position:"absolute",top:"56%"}} ></span>
 
                     <div className="input-field">
                         <i className="fa fa-lock"></i>
-                        <input type="password" name="password" id="password" value="{{old('password')}}" placeholder="Password" />
+                        <input type="password" name="password" id="password"  placeholder="Password" />
                         <div className="eye" onClick={password}><i className="fa fa-eye" aria-hidden="true" id="eye"></i></div> 
                     </div>
                     <span className="error" style={{position:"absolute",top:"74%"}} ></span>
@@ -89,25 +89,25 @@ function Signup() {
 
                         <div className="input-field">
                         <i className="fa fa-user"></i>
-                        <input type="text" name="LastName" id="Lastname" value="{{old('LastName')}}" placeholder="Last name" />
+                        <input type="text" name="LastName" id="Lastname"  placeholder="Last name" />
                         </div>
                         <span className="error" style={{position:"absolute",top:"20%"}} ></span>
 
                         <div className="input-field">
                         <i className="fa fa-map-marker" aria-hidden="true"></i>
-                        <input type="text" name="address" id="address" value="{{old('address')}}" placeholder="Address" />
+                        <input type="text" name="address" id="address"  placeholder="Address" />
                         </div>
                         <span className="error" style={{position:"absolute",top:"38%"}} ></span>
 
                         <div className="input-field">
                         <i className="fa fa-envelope"></i>
-                        <input type="email" name="U_email" id="email" value="{{old('U_email')}}" placeholder="Email" />
+                        <input type="email" name="U_email" id="email"  placeholder="Email" />
                         </div>
                         <span className="error" style={{position:"absolute",top:"56%"}} ></span>
 
                         <div className="input-field">
                         <i className="fa fa-lock"></i>
-                        <input type="password" name="cpassword" id="cpassword"  value="{{old('cpassword')}}" placeholder="Confirm Password" />
+                        <input type="password" name="cpassword" id="cpassword"   placeholder="Confirm Password" />
                         <div className="eye" onClick={cpassword}><i className="fa fa-eye" aria-hidden="true" id="ceye" ></i></div> 
                         </div>
                         <span className="error" style={{position:"absolute",top:"74%"}} ></span>
