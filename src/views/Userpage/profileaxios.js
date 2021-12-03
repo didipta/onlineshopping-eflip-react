@@ -9,8 +9,19 @@ const Userprofileaxois = ()=>{
     var useridinfo = null;
     if(localStorage.getItem('usernames')){
       var userinfo = JSON.parse(localStorage.getItem('usernames'));
-      useridinfo=userinfo.allinfo;
+      useridinfo=userinfo.allinfo.U_username;
     }
+    const [profileinfo, setprofileinfo] = useState([]);
+    let url="http://127.0.0.1:8000/api/profile/"+useridinfo;
+    useEffect(()=>{
+        axios.get(url)
+        .then(resp=>{
+           console.log(resp.data);
+           setprofileinfo(resp.data);
+        }).catch(err=>{
+            console.log(err);
+        });
+    },[]);
   
        
         return(
@@ -18,7 +29,7 @@ const Userprofileaxois = ()=>{
     
                 <Header/>
                 
-                <Userprofileinfo Systemuser={useridinfo}/>
+                <Userprofileinfo Systemuser={profileinfo}/>
                
                 <Footer/>
             </div>

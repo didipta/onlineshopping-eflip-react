@@ -151,7 +151,7 @@ function Signup() {
             }
             else{
                 formIsValid = false;
-                document.getElementById("passwords").innerHTML="Password Cannot be empty and only letter";
+                document.getElementById("passwords").innerHTML="Password Cannot be empty ";
             }
             //Confirm Password
             if (inputs.cpassword) {
@@ -166,7 +166,7 @@ function Signup() {
             }
             else{
                 formIsValid = false;
-                document.getElementById("cpasswords").innerHTML="Password Cannot be empty and only letter";
+                document.getElementById("cpasswords").innerHTML="confirm Password Cannot be empty ";
             }
                 return formIsValid;
 

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import {files} from "react";
+import SweetAlert from 'react-bootstrap-sweetalert';
+import axios from "axios";
 const Userprofileinfo = ( props)=>{
     
     const password=()=>{
@@ -54,23 +56,64 @@ const Userprofileinfo = ( props)=>{
         
         //Handlechange//
         const [inputs, setInputs] = useState({
-            name:"",address:"",U_email:"",U_phone:"",U_username:""
+           id:"", name:"",address:"",U_email:"",U_phone:"",U_username:"",password:""
         });
 
         useEffect(()=>{
-            setInputs(values => ({...values, name: props.Systemuser.U_Name,address:props.Systemuser.U_address,
+            setInputs(values => ({...values,id:props.Systemuser.id, name: props.Systemuser.U_Name,address:props.Systemuser.U_address,
                 U_email:props.Systemuser.U_email,U_username:props.Systemuser.U_username,
-                U_phone:props.Systemuser.U_phone
+                U_phone:props.Systemuser.U_phone,password:props.Systemuser.U_password
             
             
             }))
         },[props.Systemuser]);
 
+        //Pasword Handlechange//
+        const [inputpassword, setInputspassword] = useState({
+        newpassword:"",thispassword:""
+        });
+        //profile handlechage
         const handleChange = (event) => {
             const name = event.target.name;
             const value = event.target.value;
             setInputs(values => ({...values, [name]: value}))
+            setInputspassword(values => ({...values, [name]: value}))
           }
+            ////Profile update 
+          const handleSubmit = (event) => {
+            event.preventDefault();
+                axios.post("http://127.0.0.1:8000/api/profileEdite",inputs)
+                .then(resp=>{
+                    var userinfos = resp.data;
+                    console.log(userinfos);
+                    alert("Thank You,Your profile is Update")
+                }).catch(err=>{
+                    console.log(err);
+                });
+          }
+                  ////Password change 
+                  const handleSubmitpass = (event) => {
+                    event.preventDefault();
+                    if(inputs.password==inputpassword.thispassword)
+                    {
+                        axios.post("http://127.0.0.1:8000/api/Changepassword",inputs)
+                        .then(resp=>{
+                            var userinfos = resp.data;
+                            console.log(userinfos);
+                            alert("Thank You password is chnage")
+                            localStorage.removeItem('usernames');
+                            window.location="/Sign-in";
+                        }).catch(err=>{
+                            console.log(err);
+                        });
+                    }
+                    else
+                    {
+                        alert("password not change")
+                    }
+                  }
+     
+         
           document.getElementById("title").innerHTML="Eflip | "+ props.Systemuser.U_username;
 
     return(
@@ -88,14 +131,14 @@ const Userprofileinfo = ( props)=>{
 
             <label class="Add-file" onClick={myFunction}><i class="fa fa-camera" aria-hidden="true"></i></label>
         </div>
-
-        <form action="{{route('/profileEdite')}}" method="Post" class="profile-form">
+       
+        <form onSubmit={handleSubmit} method="Post" class="profile-form">
         
-        <input type="hidden" name="id"  value=""/>
+        <input type="hidden" name="id"  value={inputs.id}/>
             <fieldset>
                 <legend><p>Username</p></legend> 
                 <div class="input-file">
-                    <input type="text" id="name"  name="name"  value={inputs.name} placeholder="username" onChange={handleChange} /><br/>
+                    <input type="text"   name="name"  value={inputs.name} placeholder="username" onChange={handleChange} /><br/>
                 </div>
                 
             </fieldset>
@@ -103,7 +146,7 @@ const Userprofileinfo = ( props)=>{
             <fieldset>
                 <legend><p>Address</p></legend> 
                 <div class="input-file">
-                    <input type="text" id="address" value={inputs.address} name="address" placeholder="Address" onChange={handleChange}/><br/>
+                    <input type="text" value={inputs.address} name="address" placeholder="Address" onChange={handleChange}/><br/>
                 </div>
                 
             </fieldset>
@@ -132,8 +175,6 @@ const Userprofileinfo = ( props)=>{
                 </div>
                
             </fieldset>
-        
-
             <input type="submit" name="submit" value="Save" class="btn" />
         
            
@@ -146,17 +187,17 @@ const Userprofileinfo = ( props)=>{
                 PASSWORD
             </h1>
         </div>
-        <form action="{{route('/Changepassword')}}" method="Post" class="Changepassword">
+        <form onSubmit={handleSubmitpass} method="Post" class="Changepassword">
         <input type="hidden" name="id"  value="{{$Systemuser->id}}"/>
            
                 <div class="input-file-cp" >
-                    <input type="password" id="password"  name="thispassword" placeholder="Current password"/><br/>
+                    <input type="password"  id="password" value={inputpassword.thispassword} onChange={handleChange}  name="thispassword" placeholder="Current password"/><br/>
                     <div class="eye eyes" onClick={password} style={{ position:"absolute" ,left:"20vw",top:"7.5vw" ,cursor:"pointer"}}  id="eye"><i class="fa fa-eye" aria-hidden="true" ></i></div> 
                 </div>
                
           
                 <div class="input-file-cp">
-                    <input type="password" id="cpassword" name="newpassword" placeholder="New password" />
+                    <input type="password"  id="cpassword" value={inputpassword.newpassword} onChange={handleChange} name="newpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="New password" />
               <div class="eye eyes" onClick={cpassword} style={{position:"absolute",left:"20vw",top:"12vw",cursor: "pointer"}} id="ceye"><i class="fa fa-eye" aria-hidden="true" ></i></div> 
                 </div>
                 <button class="btn">
