@@ -11,17 +11,18 @@ const Userprofileaxois = ()=>{
       var userinfo = JSON.parse(localStorage.getItem('usernames'));
       useridinfo=userinfo.allinfo;
     }
+  
+       
+        return(
+            <div>
     
-    document.getElementById("title").innerHTML="Eflip | "+ useridinfo.U_username;
-    return(
-        <div>
-
-            <Header/>
-            
-            <Userprofileinfo Systemuser={useridinfo}/>
-           
-            <Footer/>
-        </div>
-    )
-        }
+                <Header/>
+                
+                <Userprofileinfo Systemuser={useridinfo}/>
+               
+                <Footer/>
+            </div>
+        )
+    }
+   
 export default  Userprofileaxois;

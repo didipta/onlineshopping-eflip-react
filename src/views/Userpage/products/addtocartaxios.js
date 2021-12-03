@@ -9,6 +9,15 @@ import Header from "../navigation/Header";
 import Footer from "../navigation/Footer";
 import Addtocartinfo from "./addtocart";
 const Addtocartaxioxs = (props)=>{
+    //header info
+    var useridinfo = null;
+    if(localStorage.getItem('usernames')){
+      var userinfo = JSON.parse(localStorage.getItem('usernames'));
+      useridinfo=userinfo.allinfo.U_username;
+      console.log(userinfo);
+    }
+    axios.defaults.headers.common["Authorization"] = useridinfo;
+  ///
     var {productid} =useParams();
     let url="http://127.0.0.1:8000/api/addtocarttwo/"+productid;
     

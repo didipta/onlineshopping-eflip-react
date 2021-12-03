@@ -25,7 +25,7 @@ if(localStorage.getItem('usernames')){
 axios.defaults.baseURL="http://127.0.0.1:8000/api/";
 axios.defaults.headers.common["Authorization"] = useridinfo;
 console.log(axios.defaults.headers.common["Authorization"]);
-   document.getElementById("title").innerHTML="Eflip | Home";
+document.getElementById("title").innerHTML="Eflip | Home";
    return(
   <>
    <Header/>

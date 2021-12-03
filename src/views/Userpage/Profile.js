@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import {files} from "react";
 const Userprofileinfo = ( props)=>{
+    
     const password=()=>{
         var x= document.getElementById("password");
         if(x.type=="password")
@@ -70,6 +71,7 @@ const Userprofileinfo = ( props)=>{
             const value = event.target.value;
             setInputs(values => ({...values, [name]: value}))
           }
+          document.getElementById("title").innerHTML="Eflip | "+ props.Systemuser.U_username;
 
     return(
         <>

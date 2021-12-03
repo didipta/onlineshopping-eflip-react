@@ -15,25 +15,35 @@ function Header() {
       var userinfo = JSON.parse(localStorage.getItem('usernames'));
       useridinfo=userinfo.allinfo;
     }
-   return(
-  <>
+    if(useridinfo)
+    {
+        return(
+            <>
+            
+          <div className="header">
+                  <div className="call-mail">
+                      <p><i className="fa fa-phone" aria-hidden="true"></i> 01919170323</p>
+                      <p><i className="fa fa-envelope-o" aria-hidden="true"></i> diptacompani12@gmail.com</p>
+                  </div>
+                  <div className="logout-name">
+                      <p><Link to="/Profile">@<span>{useridinfo.U_username}</span></Link></p>
+                     <p onClick={logout} >Logout</p>
+                      <p><i className="fa fa-bell-o" aria-hidden="true"></i><sup className="notification">12</sup>
+                      </p>
+                  </div>
+                  
+              </div>
+              
+            </>
+             );
+    }
+
+    else
+    {
+      var x=window.location="/Sign-in";
+      return x;
+    }
   
-<div className="header">
-        <div className="call-mail">
-            <p><i className="fa fa-phone" aria-hidden="true"></i> 01919170323</p>
-            <p><i className="fa fa-envelope-o" aria-hidden="true"></i> diptacompani12@gmail.com</p>
-        </div>
-        <div className="logout-name">
-            <p><Link to="/Profile">@<span>{useridinfo.U_username}</span></Link></p>
-           <p onClick={logout} >Logout</p>
-            <p><i className="fa fa-bell-o" aria-hidden="true"></i><sup className="notification">12</sup>
-            </p>
-        </div>
-        
-    </div>
-    
-  </>
-   );
     
 }
 
