@@ -3,13 +3,15 @@ import { useHistory } from "react-router-dom";
 import {Link} from "react-router-dom";
 function Header() {
     const history= useHistory();
-    function logout()
+
+    //logout 
+function logout()
 {
     
     localStorage.removeItem('usernames');
     window.location="/Sign-in";
 }
-
+////////////localstorage value get///////
     var useridinfo = null;
     if(localStorage.getItem('usernames')){
       var userinfo = JSON.parse(localStorage.getItem('usernames'));

@@ -60,9 +60,14 @@ function Signin() {
                 else if (usertype=="Admin") {
                     history.push("/home");
                 }
-                
+                else
+                { 
+                    alert("Please Enter Your right Password and Username");
+                }
             }).catch(err=>{
+                
                 console.log(err);
+                
             });
             
         }

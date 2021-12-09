@@ -6,7 +6,7 @@ function Size(props)
         return(
             <div class="item-size" style={{marginLeft: "10px"}}>
             <h2>Size</h2>
-            <select name="item_size" required>
+            <select name="item_size" id="item_size" required>
                 <option value="" >--Select--</option>
                 <option value="L" id="M" name="L">L</option>
                 <option  value="M" >M</option>
@@ -22,7 +22,7 @@ function Size(props)
     else
     {
         return (
-      <input type="hidden" name="item_size" value="no size"/>
+      <input type="hidden" name="item_size" id="item_size" value="no size"/>
         );
     }
   

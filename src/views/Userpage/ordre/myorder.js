@@ -5,6 +5,7 @@ import axios from "axios";
 import Header from "../navigation/Header";
 import Footer from "../navigation/Footer";
 function Myorder() {
+    document.getElementById("title").innerHTML="Eflip | All Your Oder items";
     var useridinfo = null;
     if(localStorage.getItem('usernames')){
       var userinfo = JSON.parse(localStorage.getItem('usernames'));

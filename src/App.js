@@ -10,6 +10,7 @@ import Userprofileaxois from './views/Userpage/profileaxios';
 import axios from "axios";
 import Myorder from "./views/Userpage/ordre/myorder";
 import Myoderdetails from "./views/Userpage/ordre/myoderdetails";
+import Payments from "./views/Userpage/ordre/payment";
 function App() {
 
 
@@ -24,6 +25,7 @@ function App() {
   <Route exact path="/addtocarttwo/:productid"><Addtocartaxioxs/></Route>
   <Route exact path="/Profile"><Userprofileaxois/></Route>
   <Route exact path="/myorder"><Myorder/></Route>
+  <Route exact path="/paymant"><Payments/></Route>
   <Route exact path="/Showallodersdetails/:orderid"><Myoderdetails/></Route>
   </Switch>
   </Router>

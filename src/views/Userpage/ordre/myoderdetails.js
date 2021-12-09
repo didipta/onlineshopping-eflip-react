@@ -5,6 +5,7 @@ import Header from "../navigation/Header";
 import Footer from "../navigation/Footer";
 function Myoderdetails()
 {
+    document.getElementById("title").innerHTML="Eflip | All order your";
     var {orderid} =useParams();
    
     const [myordersdetails, setmyorderdetails] = useState([]);
