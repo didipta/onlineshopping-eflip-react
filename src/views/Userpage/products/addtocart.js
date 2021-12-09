@@ -53,9 +53,9 @@ const handleSubmit = (event) => {
  <div className="top-head">
     <p style={{marginLeft:"20px" }}> <a href="/home">Home</a>/<Link to={"/productlist/"+props.product.P_categories}>{props.product.P_categories}</Link>/<a href="#" style={{color:"black"}}>{props.product.P_name}</a> </p>
  </div>
- <div className="cart-icon">
+ <Link to="/paymant"><div className="cart-icon">
 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
-</div>
+</div></Link>
 <form onSubmit={handleSubmit}  method="post">
 <div className="content-item">
   

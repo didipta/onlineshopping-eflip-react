@@ -26,9 +26,9 @@ const Productaxio = ()=>{
     return(
         <div>
             <Header/>
-            <a href="{{route('/Cartdetails')}}"><div class="cart-icon">
-                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                </div></a>
+            <Link to="/paymant"><div className="cart-icon">
+            <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
+            </div></Link>
             <div className="top-head">
     <p style={{marginLeft:"20px"}}> <a href="/home">Home</a> / <Link to="" style={{color:"black"}}>{categories}</Link> </p>
      </div>

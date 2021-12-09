@@ -36,9 +36,7 @@ const Addtocartaxioxs = (props)=>{
     return(
         <div>
            <Header/>
-            <a href="{{route('/Cartdetails')}}"><div class="cart-icon">
-                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                </div></a>
+            
      <div>
          <Addtocartinfo product={productinfo} />
             
