@@ -11,6 +11,7 @@ import axios from "axios";
 import Myorder from "./views/Userpage/ordre/myorder";
 import Myoderdetails from "./views/Userpage/ordre/myoderdetails";
 import Payments from "./views/Userpage/ordre/payment";
+import Cartdelete from "./views/Userpage/ordre/cartdelete";
 function App() {
 
 
@@ -27,6 +28,7 @@ function App() {
   <Route exact path="/myorder"><Myorder/></Route>
   <Route exact path="/paymant"><Payments/></Route>
   <Route exact path="/Showallodersdetails/:orderid"><Myoderdetails/></Route>
+  <Route exact path="/cartiteamdelet/:deletid"><Cartdelete/></Route>
   </Switch>
   </Router>
     

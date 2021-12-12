@@ -47,7 +47,7 @@ function Payments()
         <p>Price-{cartproduct.P_price}</p>
         <p>{cartproduct.P_quantity}*{cartproduct.P_price}</p>
         <h3>total price-{cartproduct.P_tprice} tk</h3>
-        <a href="/cartiteamdelet/{{cartproduct.id}}"><button>delete</button></a>
+        <Link to={"/cartiteamdelet/"+cartproduct.id}><button>delete</button></Link>
 
        
     </div>

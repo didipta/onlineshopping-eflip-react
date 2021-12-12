@@ -55,7 +55,7 @@ function Paymantpart2(props)
     }
   ///////////////////////
     const [inputs, setInputs] = useState({
-        userid:"",orderidinfo:"",totaleprice:"",Paymenttype:"",username:""
+        userid:"",orderid:"",totaleprice:"",Paymenttype:"",username:""
     });
     //////////////////////////
     const handleChange = (event) => {
@@ -63,33 +63,57 @@ function Paymantpart2(props)
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
     }
-    //////////////////////////
-    const handleSubmit = (event) => {
+    ///////////Bkashmathoed///////////////
+    const handleSubmit = (event) => {      
         event.preventDefault();
         inputs.Paymenttype=document.getElementById("Bkash").value;
-       console.log(inputs);
+        axios.post("http://127.0.0.1:8000/api/Paymentadd",inputs)
+        .then(resp=>{
+           console.log(resp.data);
+           window.location="/paymant";
+        }).catch(err=>{
+            
+            console.log(err);
+            
+        });
                 
          
       }
-      ///////////////////////////////
+      ////////////Cardmethod///////////////////
       const handleSubmit2 = (event) => {
         event.preventDefault();
         inputs.Paymenttype=document.getElementById("card").value;
-       console.log(inputs);
+        axios.post("http://127.0.0.1:8000/api/Paymentadd",inputs)
+        .then(resp=>{
+           console.log(resp.data);
+           window.location="/paymant";
+        }).catch(err=>{
+            
+            console.log(err);
+            
+        });
                 
          
       }
-      ////////////////////////////////
+      /////////////Cashmethod///////////////////
       const handleSubmit3 = (event) => {
         event.preventDefault();
         inputs.Paymenttype=document.getElementById("Cash").value;
-       console.log(inputs);
+        axios.post("http://127.0.0.1:8000/api/Paymentadd",inputs)
+            .then(resp=>{
+               console.log(resp.data);
+               window.location="/paymant";
+            }).catch(err=>{
+                
+                console.log(err);
+                
+            });
                 
          
       }
      ///////////////////////////////////
 
-    if ( props.carddetail) {
+    if (props.carddetail.length>0) {
    return(
        <>
     <div class="totalprice">
@@ -127,17 +151,17 @@ function Paymantpart2(props)
             <form onSubmit={handleSubmit} class="paymentform" id="bkashback" >
                 <input type="hidden" name="userid" value={inputs.userid=useridinfo}/>
                 <input type="hidden" name="username" value={inputs.username=usernameinfo}/>
-                <input type="hidden" name="orderid" value={inputs.orderidinfo="#OrdE"+orderid}/>
+                <input type="hidden" name="orderid" value={inputs.orderid="#OrdE"+orderid}/>
                 <input type="hidden" name="totaleprice" value={inputs.totaleprice=alltotalprice+45}/>
                
                 <input type="hidden" id="Bkash" value="Bkash"/>
 
                 <h4>Bkash in Payment</h4>
-                <input type="text" name="phonenu" id="" placeholder="Phone number" /><br/>
+                <input type="text" name="phonenu" id="" placeholder="Phone number" required/><br/>
               
                   <span class="error" style={{position:"absolute",top:"20%"}} ></span>
                     
-                <input type="password" name="password" id="" placeholder="password"/>
+                <input type="password" name="password" id="" placeholder="password" required/>
                       <span class="error" style={{position:"absolute",top:"20%"}}></span>
                    
                 <button class="btnorder">Confirm Order</button>
@@ -147,21 +171,21 @@ function Paymantpart2(props)
             
     <input type="hidden" name="userid" value={inputs.userid=useridinfo}/>
                 <input type="hidden" name="username" value={inputs.username=usernameinfo}/>
-                <input type="hidden" name="orderid" value={inputs.orderidinfo="#OrdE"+orderid}/>
+                <input type="hidden" name="orderid" value={inputs.orderid="#OrdE"+orderid}/>
                 <input type="hidden" name="totaleprice" value={inputs.totaleprice=alltotalprice+45}/>
                
                 <input type="hidden" id="card" value="card"/>
                 <h4>Cart in Payment</h4>
-                <input type="text" name="formid" id="" placeholder="User Id" /><br/>
+                <input type="text" name="formid" id="" placeholder="User Id" required/><br/>
                 <span class="error" style={{position:"absolute",top:"20%"}}></span>
-                <input type="password" name="password" id="" placeholder="password"/>
+                <input type="password" name="password" id="" placeholder="password" required/>
                 <span class="error" style={{position:"absolute",top:"20%"}}></span>
                 <button class="btnorder">Confirm Order</button>
             </form>
 
             <form onSubmit={handleSubmit3} class="paymentform" id="cashback" >
             <input type="hidden" name="username" value={inputs.username=usernameinfo}/>
-                <input type="hidden" name="orderid" value={inputs.orderidinfo="#OrdE"+orderid}/>
+                <input type="hidden" name="orderid" value={inputs.orderid="#OrdE"+orderid}/>
                 <input type="hidden" name="totaleprice" value={inputs.totaleprice=alltotalprice+45}/>
                
                 <input type="hidden" id="Cash" value="Cash"/>

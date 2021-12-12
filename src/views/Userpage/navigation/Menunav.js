@@ -23,7 +23,7 @@ function Menunav() {
         </div>
         
         <div className="profile">
-        <a href="{{route('/Cartdetails')}}"><i className="fa fa-cart-plus" aria-hidden="true"></i></a>
+        <a href="/paymant"><i className="fa fa-cart-plus" aria-hidden="true"></i></a>
             <i className="fa fa-comment-o" aria-hidden="true"></i>
             <Link to="/Profile"><i className="fa fa-user-o" aria-hidden="true"></i></Link> 
         </div>
