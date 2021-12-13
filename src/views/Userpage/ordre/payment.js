@@ -6,15 +6,17 @@ import Footer from "../navigation/Footer";
 import Paymantpart2 from "./paymentpart2";
 function Payments()
 {
+
+    ///localstorage information////////////////////////////
     document.getElementById("title").innerHTML="Eflip | All Cart iteam your";
     var useridinfo = null;
     if(localStorage.getItem('usernames')){
       var userinfo = JSON.parse(localStorage.getItem('usernames'));
       useridinfo=userinfo.allinfo;
     }
-
+    ////////////////////////////////////////////////////////////
      
-    
+    ////Get Add To Cart  Detalis///////////////////////////
     var idname=useridinfo.U_username;
     const [carddetails, setcarddetails] = useState([]);
     let url="http://127.0.0.1:8000/api/Addtocartdetalis/"+idname;
@@ -28,6 +30,8 @@ function Payments()
             console.log(err);
         });
     },[]);
+
+    /////////////////////////////////////////////////
 
     return(
         <>

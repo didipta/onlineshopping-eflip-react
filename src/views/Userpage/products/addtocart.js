@@ -8,7 +8,7 @@ function Addtocartinfo(props) {
   ///localStorage
   var userinfo = JSON.parse(localStorage.getItem('usernames'));
      var useridinfo=userinfo.allinfo;
-
+////////////////////////////////////////////
     var img1="/img/"+props.product.P_img1;
     var img2="/img/"+props.product.P_img2;
     var img3="/img/"+props.product.P_img3;
@@ -17,7 +17,7 @@ function Addtocartinfo(props) {
  const [inputs, setInputs] = useState({
     ids:"",user_name:"",item_categories:"",iteam_name:"",item_quantity:"",item_price:"",item_price:"",item_size:""
 });
-
+//////////////////////////////////
 
 
 const handleChange = (event) => {
@@ -26,6 +26,7 @@ const handleChange = (event) => {
     setInputs(values => ({...values, [name]: value}))
 }
 
+///Handlesubmit function//////////////////////////
 
 const handleSubmit = (event) => {
     var itemquantity=document.getElementById("item_quantity").value;
@@ -46,7 +47,7 @@ const handleSubmit = (event) => {
             
      
   }
-
+////////////////////////////////////////////////////////////
    return(
   <>
   <div className="addtocart">
@@ -96,7 +97,7 @@ const handleSubmit = (event) => {
                     <option value="#252525" style={{backgroundColor: "#252525"}}></option>
                 </select>
                 </div>
-
+               
                 <Size issize={props.product.P_categories}/>
        </div>
 

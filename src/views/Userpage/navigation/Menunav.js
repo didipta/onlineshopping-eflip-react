@@ -41,7 +41,7 @@ function Menunav() {
         <div className="nav">
             <ul>
                 <li><a href="">HOME</a></li>
-                <li><a href="{{route('/financial')}}">$FINANCIALS</a></li>
+                <li><a href="/financial">$FINANCIALS</a></li>
                 <li><Link to="/myorder">MY ORDERS</Link></li>
                 <li><a href="">SHOP</a></li>
             </ul>
