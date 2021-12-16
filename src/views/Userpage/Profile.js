@@ -44,11 +44,11 @@ const Userprofileinfo = ( props)=>{
           }
 
           var img="/img/"+props.Systemuser.U_profileimg;
-          ///file handle
+          ///file handle///////////////////////////////////////
           const [file,setfile]=useState("")
           function handlefile(file)
           {
-              setfile(URL.createObjectURL(file.target.files[0]))
+            setfile(URL.createObjectURL(file.target.files[0]))
           }
 
 
@@ -56,7 +56,7 @@ const Userprofileinfo = ( props)=>{
         
         //Handlechange//
         const [inputs, setInputs] = useState({
-           id:"", name:"",address:"",U_email:"",U_phone:"",U_username:"",password:""
+           id:"", name:"",address:"",U_email:"",U_phone:"",U_username:"",password:"",imgfile:""
         });
 
         useEffect(()=>{
@@ -112,7 +112,33 @@ const Userprofileinfo = ( props)=>{
                         alert("password not change")
                     }
                   }
-     
+     //////////////////////////////////////////////////////////////////////////////
+
+
+     const handleSubmitimg = (event) => {
+        var fullPath = document.getElementById('imgfile').value;
+        if (fullPath) {
+            var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+            var filename = fullPath.substring(startIndex);
+            if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                inputs.imgfile = filename.substring(1);
+
+            }
+        }
+        event.preventDefault();
+        axios.post("http://127.0.0.1:8000/api/profileimg",inputs)
+        .then(resp=>{
+            var userinfos = resp.data;
+            console.log(userinfos);
+            alert("Thank You Change your profile img");
+            window.location="/Profile";
+        }).catch(err=>{
+            console.log(err);
+        });
+        console.log(inputs);
+      }
+
+////////////////////////////////////////////////////////////////////////////////
          
           document.getElementById("title").innerHTML="Eflip | "+ props.Systemuser.U_username;
 
@@ -214,15 +240,15 @@ const Userprofileinfo = ( props)=>{
     <div id="profileimg">
        <div onClick={myFunction2}> <i class="fa fa-times" aria-hidden="true" ></i></div>
 
-        <form action="{{route('/profileimg')}}" method="Post" class="profile-form" enctype="multipart/form-data">
-            <input type="hidden" name="id"  value="{{$Systemuser->id}}"/>
+        <form onSubmit={handleSubmitimg} class="profile-form" enctype="multipart/form-data">
+            <input type="hidden" name="id"/>
             <div class="img">
   
               <img src={file||img} alt="" id="blah"/>
-  
+              
               <label for="imgfile" class="Add-file"><i type="file" class="fa fa-plus" aria-hidden="true"></i></label>
               <div class="file-style"> <input type="file" name="imgfile" id="imgfile" onChange={handlefile}/></div>
-              <br/> <button class="btn">Save </button>
+              <br/> <button class="btn">save</button>
           </div>
        </form>
 
