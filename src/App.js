@@ -13,6 +13,18 @@ import Myoderdetails from "./views/Userpage/ordre/myoderdetails";
 import Payments from "./views/Userpage/ordre/payment";
 import Cartdelete from "./views/Userpage/ordre/cartdelete";
 import Finanicial from "./views/Userpage/Others/Finanicial";
+import StaffHead from "./views/Staffuser/staffhome";
+import AllProducts from "./views/Staffuser/Allproduct";
+import AddProduct from "./views/Staffuser/Addproduct";
+import EditProduct from "./views/Staffuser/Editproduct";
+import OrderDetails from "./views/Staffuser/allordershow";
+import AdminHome from "./views/Adminpage/adminhome";
+import Userlistshow from "./views/Adminpage/Showallusers";
+import Createuseralls from "./views/Adminpage/addemployes";
+import AllPostsalls from "./views/Adminpage/orderdetails";
+import ProductListalls from "./views/Adminpage/adminproductlist";
+import Createproductadmin from "./views/Adminpage/Addproductadmin";
+import OrderListadmin from "./views/Adminpage/adminordershow";
 function App() {
 
 
@@ -32,8 +44,23 @@ function App() {
   <Route exact path="/paymant"><Payments/></Route>
   <Route exact path="/Showallodersdetails/:orderid"><Myoderdetails/></Route>
   <Route exact path="/cartiteamdelet/:deletid"><Cartdelete/></Route>
-  <Router exact path="/financial"><Finanicial/></Router>
-  {/* //.......................................................// */}
+  <Route exact path="/financial"><Finanicial/></Route>
+  {/* //.................Staff All routes......................................// */}
+  <Route exact path="/fStaffhome"><StaffHead/></Route>
+  <Route exact path="/AllProducts"><AllProducts/></Route>
+  <Route exact path="/AddProduct"><AddProduct/></Route>
+  <Route exact path="/EditProduct/:editid"><EditProduct/></Route>
+  <Route exact path="/OrderDetails"><OrderDetails/></Route>
+  {/* //...................Admin All Routers....................................// */}
+
+  <Route exact path="/AdminHome"><AdminHome/></Route>
+  <Route exact path="/Userlistshow"><Userlistshow/></Route>
+  <Route exact path="/Createuseralls"><Createuseralls/></Route>
+  <Route exact path="/AllPostsalls"><AllPostsalls/></Route>
+  <Route exact path="/ProductListalls"><ProductListalls/></Route>
+  <Route exact path="/Createproductadmin"><Createproductadmin/></Route>
+  <Route exact path="/OrderListadmin"><OrderListadmin/></Route>
+
   </Switch>
   </Router>
     

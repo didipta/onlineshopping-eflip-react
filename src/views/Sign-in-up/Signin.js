@@ -52,13 +52,13 @@ function Signin() {
                    
                 }
                 else if (usertype=="Staff") {
-                    history.push("/home");
+                    history.push("/fStaffhome");
                 }
                 else if (usertype=="Delivaryman") {
                     history.push("/home");
                 }
                 else if (usertype=="Admin") {
-                    history.push("/home");
+                    history.push("/AdminHome");
                 }
                 else
                 { 

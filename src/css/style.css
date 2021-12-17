@@ -800,3 +800,112 @@ header
     margin-left: 20px;
     font-size: 1.5rem;
 } 
+
+
+.headersss {
+    padding: 20px;
+    text-align: center;
+    background: rgb(241, 114, 184);
+  }
+
+  .headersss h1 {
+    font-size: 30px;
+  }
+
+  
+  .topnavsss {
+    overflow: hidden;
+    background-color: rgb(119, 78, 78);
+  }
+
+  
+div.stickyss {
+  position: sticky;
+  top: 0;
+  padding: 0;
+  border: 2px solid #8461d4;
+
+}
+
+
+.bodys{
+    width: 1520px;
+    height: 1000px;
+    background: url(../img/home1.png) no-repeat;
+    background-size: cover;
+  
+  }
+
+  
+
+  
+  .topnavsss a{
+    float: left;
+    display: block;
+    color: #929191;
+    text-align: center;
+    padding: 10px 50px;
+ 
+  }
+
+  .topnavsss a:hover {
+    background-color: rgb(240, 118, 118);
+    color: rgb(173, 160, 160);
+  }
+
+  .header1ss {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  
+  
+    .buttonss {
+      background-color: #d11313; /* Green */
+      border: none;
+      color: white;
+      padding: 10px 32px;
+      text-align: relative;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 2px 2px;
+      margin-left: 100px;
+      position:center;
+      cursor: pointer;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+   .tabless{
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      }
+      
+      
+      
+      .tabless  th, .tabless td {
+      text-align: left;
+      padding: 20px;
+      }
+    
+      .header1ss img
+      {
+          width: 50px;
+          height: 50px;
+      }
+      .editimg
+      {
+          width: 30px;
+          height: 30px;
+      }
+      .buttonadmin
+      {
+          margin: 10px;
+          background-color: #009ffc;
+          padding: 10px;
+          color: white;
+      }
