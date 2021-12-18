@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Headadmin from "./header";
-
+import { Link } from "react-router-dom";
 
 const ProductListalls = ()=>{
     const[posts, setProducts] = useState([]);
@@ -48,6 +48,7 @@ const ProductListalls = ()=>{
                     <td >{post.P_img1}</td>
                     <td >{post.P_img2}</td>
                     <td >{post.P_img3}</td>
+                    <td><Link to={`editproduct/${post.id}`}>Edit product</Link></td>
                 </tr>
                     ))}
             </table> 

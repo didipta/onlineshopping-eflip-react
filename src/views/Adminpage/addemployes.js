@@ -17,7 +17,7 @@ function Createuseralls() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs);
-    axios.post("user/create",inputs)
+    axios.post("http://127.0.0.1:8000/api/user/create",inputs)
     .then(resp=>{
         var infos = resp.data;
         console.log(infos);

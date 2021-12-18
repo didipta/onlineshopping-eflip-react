@@ -55,7 +55,7 @@ function Signin() {
                     history.push("/fStaffhome");
                 }
                 else if (usertype=="Delivaryman") {
-                    history.push("/home");
+                    history.push("/delivaryHome");
                 }
                 else if (usertype=="Admin") {
                     history.push("/AdminHome");

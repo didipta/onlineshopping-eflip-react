@@ -131,7 +131,7 @@ const Userprofileinfo = ( props)=>{
             var userinfos = resp.data;
             console.log(userinfos);
             alert("Thank You Change your profile img");
-            window.location="/Profile";
+            window.location="/home";
         }).catch(err=>{
             console.log(err);
         });

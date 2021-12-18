@@ -25,6 +25,12 @@ import AllPostsalls from "./views/Adminpage/orderdetails";
 import ProductListalls from "./views/Adminpage/adminproductlist";
 import Createproductadmin from "./views/Adminpage/Addproductadmin";
 import OrderListadmin from "./views/Adminpage/adminordershow";
+import DelivaryHome from "./views/Delivaryman/Delivarhome";
+import DeliOrderlist from "./views/Delivaryman/deliorder";
+import DeliEditorder from "./views/Delivaryman/delieditorder";
+import DeliOrderdetailslist from "./views/Delivaryman/deliordershow";
+import DeliProductList from "./views/Delivaryman/deliproduct";
+
 function App() {
 
 
@@ -51,6 +57,7 @@ function App() {
   <Route exact path="/AddProduct"><AddProduct/></Route>
   <Route exact path="/EditProduct/:editid"><EditProduct/></Route>
   <Route exact path="/OrderDetails"><OrderDetails/></Route>
+
   {/* //...................Admin All Routers....................................// */}
 
   <Route exact path="/AdminHome"><AdminHome/></Route>
@@ -60,6 +67,14 @@ function App() {
   <Route exact path="/ProductListalls"><ProductListalls/></Route>
   <Route exact path="/Createproductadmin"><Createproductadmin/></Route>
   <Route exact path="/OrderListadmin"><OrderListadmin/></Route>
+
+  {/* //...................Delivaryman All Routers....................................// */}
+
+  <Route exact path="/delivaryHome"><DelivaryHome/></Route>
+  <Route exact path="/DeliOrderlist"><DeliOrderlist/></Route>
+  <Route exact path="/DeliEditorder/:id"><DeliEditorder/></Route>
+  <Route exact path="/DeliOrderdetailslist"><DeliOrderdetailslist/></Route>
+  <Route exact path="/DeliProductList"><DeliProductList/></Route>
 
   </Switch>
   </Router>
