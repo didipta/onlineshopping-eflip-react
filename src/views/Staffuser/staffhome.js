@@ -9,7 +9,7 @@ const StaffHead = () => {
         <div className="bodys">
    
             <div class="headersss stickyss">
-                 <h1>Welcome to Eflip shopping</h1>
+                 <h1>Welcome to Eflip shopping Staff Page</h1>
                  <div class="topnavsss">  
             <Link to="/">Home</Link>
             <Link to="/profile">Profile</Link>

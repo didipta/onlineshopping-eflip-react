@@ -9,7 +9,7 @@ const DelivaryHome = () => {
             <DeliHead/><br/>
         <div>
      
-     <h1>E-flip E-commerce Shop</h1>
+     <h1>E-flip E-commerce Shop Delivarymane page</h1>
         </div>
         <div>
         </div>

@@ -25,7 +25,7 @@ const OrderDetails = (props) =>{
         <div class="header1">
             <h1>All Order Details</h1>
            
-            <table class="table" border='1'>
+            <table class="tabless" border='1'>
               <thead>
             <tr>
                     <th>Order Id</th>

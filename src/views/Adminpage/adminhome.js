@@ -8,7 +8,7 @@ const AdminHome = () => {
             <Headadmin/>
         <div><br/>
         
-        <h1>E-flip Ecommerce Website</h1>
+        <h1>E-flip Ecommerce Website Admin page </h1>
         
 
         </div>
