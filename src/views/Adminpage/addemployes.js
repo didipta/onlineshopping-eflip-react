@@ -4,16 +4,17 @@ import Headadmin from "./header";
 
 
 function Createuseralls() {
+  ///////////////////////////////
   const [inputs, setInputs] = useState({
     Name:"",Phone:"",Address:"",Username:"",Email:"",Password:"",Usertype:"admin",Profileimg:"default.jpg"
   });
-
+//////////////////////////////////////////////////
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputs(values => ({...values, [name]: value}))
   }
-
+///////////////////////////////////////
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(inputs);
@@ -26,7 +27,7 @@ function Createuseralls() {
         console.log(err);
     });
   }
-
+////////////////////////////////////////////////
   return (
       <>
       <Headadmin/><br/>

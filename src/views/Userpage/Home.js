@@ -15,13 +15,14 @@ import Tradingoffersale from "./Others/Trading-offer-sale";
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 function Home() {
+   ////////////////localstorage////////////////////////////
    var useridinfo = null;
 if(localStorage.getItem('usernames')){
   var userinfo = JSON.parse(localStorage.getItem('usernames'));
   useridinfo=userinfo.allinfo.U_username;
   console.log(userinfo);
 }
-
+////////////////////////////
 axios.defaults.baseURL="http://127.0.0.1:8000/api/";
 axios.defaults.headers.common["Authorization"] = useridinfo;
 console.log(axios.defaults.headers.common["Authorization"]);

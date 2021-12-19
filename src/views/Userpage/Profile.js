@@ -91,7 +91,8 @@ const Userprofileinfo = ( props)=>{
                     console.log(err);
                 });
           }
-                  ////Password change 
+                  ////Password change//////////////////////
+                   
                   const handleSubmitpass = (event) => {
                     event.preventDefault();
                     if(inputs.password==inputpassword.thispassword)
